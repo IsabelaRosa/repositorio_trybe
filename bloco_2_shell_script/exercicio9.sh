@@ -4,14 +4,10 @@ argumt=$1
 
 if [ -d $argumt ]
     then
-	alo=`ls -l $argumt | wc -l`
-	echo "O argumento $argumt tem $alo arquivos. "
+	var1=`ls -l $argumt | wc -l`
+	echo "O argumento $argumt tem $var1 arquivos. "
 
 else
-	echo "Modificando a frase!!!!"
+	echo "O argumento $argument não é um diretório!"
 
 fi
-
-echo "IMPRIMA ESTA FRASE"
-
-#essa aqui, não
