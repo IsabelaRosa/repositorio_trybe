@@ -1,6 +1,6 @@
 let entrada = 10;
 
-let linha = [];
+let linha = "";
 
 for (let i = 0; i < entrada; i+=1)
 {
