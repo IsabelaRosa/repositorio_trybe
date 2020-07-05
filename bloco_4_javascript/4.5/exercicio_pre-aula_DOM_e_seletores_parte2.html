@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício pré-aula 4.5</title>
+<style>
+  body {
+    background-color: bisque;
+  }
+  .classe1 {
+    color: blueviolet;
+    display: flex;
+    justify-content: center;
+  }
+</style>
+</head>
+<body>
+  <h2 id="page-title">Título</h2>
+    <p class="classe1" id="paragraph">Dê uma cor para este parágrafo!</p>
+    <h4 id="subtitle">Subtítulo</h4>
+    <p class="classe1" id="second-paragraph">Segundo parágrafo!</p>
+
+    <script>
+      var paragraph = document.getElementById("paragraph");
+      //paragraph.style.color = "red";
+      let recTitulo = document.getElementById("page-title");
+      recTitulo.innerHTML = "10 coisas que eu odeio em você";
+      let secParag = document.getElementById("second-paragraph");
+      secParag.style.backgroundColor = "pink";
+      let subTitulo = document.getElementById("subtitle");
+      subTitulo.innerHTML = "Novo Suvtítulo";
+      subTitulo.style.color = "green";
+      let paragS = document.getElementsByClassName("classe1")[0];
+      paragS.style.color = "cadetblue";
+      let subTitulo2 = document.getElementsByTagName("h4")[0];
+      subTitulo2.style.color = "brown";
+    </script>
+</body>
+</html>
