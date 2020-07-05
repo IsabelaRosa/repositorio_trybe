@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercicio parte 3 dia 4.7 - Cat Walk</title>
+</head>
+<body>
+  <div style="width: 100%">
+    <img id="img" style="position:absolute;" 
+      src="http://www.anniemation.com/clip_art/images/cat-walk.gif">
+  </div>
+  <script>
+    let imagem = document.getElementById("img");
+    imagem.style.left = "0px";
+    let gatoAnda = window.setInterval(catWalk, 50);
+    function catWalk () {
+      //usando a função parseInt para converter a medida em um número inteiro:
+      imagem.style.left = (parseInt (imagem.style.left) + 10) + "px";
+      let posicaoGato = parseInt(imagem.style.left);
+      //fazendo o gato retornar ao canto esquerd da tela comparando a posição dele
+      //com a largura da tela
+      if (posicaoGato > (innerWidth - imagem.clientWidth)) {
+        imagem.style.left = "0px";
+      }
+    }
+    </script>
+</body>
+</html>

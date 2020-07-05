@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8" />
+    <title>Exercício 1 dia 4.7 parte I</title>
+  </head>
+  <body>
+  <h1> Libs loucos </h1>
+  <ul>
+    <li> Substantivo: <input type = "text" id = "noun">
+    <li> Adjetivo: <input type = "text" id = "adjective">
+    <li> Nome de alguém: <input type = "text" id = "person">
+  </ul>
+  <button id = "lib-button"> Lib it! </button>
+  <div id = "story"> </div>
+  <script>
+    let botao = document.getElementById("lib-button");
+    botao.addEventListener("click", makeMadLib);
+    function makeMadLib () {
+      let subst = document.getElementById("noun").value;
+      let adjt = document.getElementById("adjective").value;
+      let nome = document.getElementById("person").value;
+      let historia = document.getElementById("story");
+      historia.innerHTML = `${nome} realmente gosta de ${subst} ${adjt}.`;
+    }
+  </script>
+  </body>
+</html>

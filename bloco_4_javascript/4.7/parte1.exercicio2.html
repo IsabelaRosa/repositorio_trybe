@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset=utf-8 />
+    <title>Calculator</title>
+  </head>
+  <body>
+  <label>Square this number:
+    <input type="number" id="square-input" size="2">
+  </label>
+  <button id="square-button">Calculate</button>
+  <br><br>
+  <label>Half this number:
+    <input type="number" id="half-input" size="2">
+  </label>
+  <button id="half-button">Calculate</button>
+  <br><br>
+  <label>Fraction:
+    <input type="number" id="percent1-input" size="2">
+  </label>
+  <label>Whole:
+    <input type="number" id="percent2-input" size="2">
+  </label>
+  <button id="percent-button">Calculate</button>
+  <br><br>
+  <label>Calculate area of circle with radius:
+    <input type="number" id="area-input" size="2">
+  </label>
+  <button id="area-button">Calculate</button> 
+  <br><br>
+  <div id="solution"></div>
+  <script>
+    function numQuad (num1) {
+      let quadNum = num1 * num1;
+      return `${num1} ao quadrado é igual a ${quadNum}`;
+    };
+    let botaoQuad = document.querySelector("button#square-button");
+    botaoQuad.addEventListener("click", function () {
+      let num2 = document.getElementById("square-input").value;
+      document.getElementById("solution").innerHTML = numQuad(num2);
+    });
+
+    function metadeNumero (num3) {
+      let metNum = (num3 / 2);
+      return `A metade de ${num3} é ${metNum}`;
+    };
+    let botaoMet = document.querySelector("button#half-button");
+    botaoMet.addEventListener("click", function () {
+      let num4 = document.getElementById("half-input").value;
+      document.getElementById("solution").innerHTML = metadeNumero(num4);
+    });
+
+    function calculaFracao (num5, num6) {
+      let porct = ((num5 / num6) * 100);
+      return `O número ${num5} é ${porct}% de ${num6}`;
+    };
+    let botaoPorct = document.getElementById("percent-button");
+    botaoPorct.addEventListener("click", function () {
+      let num7 = document.getElementById("percent1-input").value;
+      let num8 = document.getElementById("percent2-input").value;
+      document.getElementById("solution").innerHTML = calculaFracao(num7, num8);
+    });
+
+    function areaCirculo (raio) {
+      let area = (3.14 * raio * raio);
+      return `A área do círculo de raio ${raio} é ${area}`;
+    };
+    let botaoArea = document.getElementById("area-button");
+    botaoArea.addEventListener("click", function () {
+      let num9 = document.getElementById("area-input").value;
+      document.querySelector("div#solution").innerHTML = areaCirculo(num9);
+    });
+  </script>
+  </body>
+</html>
