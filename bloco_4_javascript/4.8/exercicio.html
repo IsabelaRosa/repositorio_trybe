@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício dia 4.8</title>
+</head>
+<style>
+  body {
+  background-color: rgb(210, 210, 210);
+  }
+  .mae {
+  display: flex;
+  justify-content: space-around;
+  }
+  .config {
+  display: flex;
+  flex-direction: column;
+  }
+  
+  h1 {
+  text-align: center;
+  }
+
+  .paragrafis {
+  margin-left: 50px;
+  margin-right: 50px;
+  }
+</style>
+<body>
+  <div class="mae">
+    Personalize sua página:
+    <div class="config">
+      Cor de fundo:
+      <button id="fundis1">Preto</button>
+      <button id="fundis2">Branco</button>
+      <button id="fundis3">Amarelo</button>
+      <button id="fundis4">Rosa</button>
+      <button id="fundis5">Azul</button>
+    </div>
+    <div class="config">
+      Cor do texto:
+      <button id="coris1">Preto</button>
+      <button id="coris2">Branco</button>
+      <button id="coris3">Amarelo</button>
+      <button id="coris4">Rosa</button>
+      <button id="coris5">Azul</button>
+    </div>
+    <div class="config">
+      Tamanho do Texto:
+      <button id="tamanhis1">10 pixels</button>
+      <button id="tamanhis2">11 pixels</button>
+      <button id="tamanhis3">12 pixels</button>
+      <button id="tamanhis4">14 pixels</button>
+      <button id="tamanhis5">16 pixels</button>
+    </div>
+    <div class="config">
+      Espaçamento:
+      <button id="espacamentis1">1.0</button>
+      <button id="espacamentis2">1.5</button>
+      <button id="espacamentis3">2.0</button>
+    </div>
+    <div class="config">
+      Tipo de Fonte:
+      <button id="fontis1">Arial</button>
+      <button id="fontis2">Monospace</button>
+    </div>
+  </div>
+  <h1>Mussum Ipsum</h1>
+  <div class="paragrafis">
+    <p id="paragrafis1">Mussum Ipsum, cacilds vidis litro abertis. Detraxit consequat et quo num tendi nada. Pra lá , depois divoltis porris, paradis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. A ordem dos tratores não altera o pão duris.</p>
+    <p id="paragrafis2">Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Viva Forevis aptent taciti sociosqu ad litora torquent. Diuretics paradis num copo é motivis de denguis. Aenean aliquam molestie leo, vitae iaculis nisl.</p>
+    <p id="paragrafis3">Copo furadis é disculpa de bebadis, arcu quam euismod magna. Si num tem leite então bota uma pinga aí cumpadi! Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Casamentiss faiz malandris se pirulitá.</p>
+    <p id="paragrafis4">Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Manduma pindureta quium dia nois paga. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.</p>
+    <p id="paragrafis5">Per aumento de cachacis, eu reclamis. Cevadis im ampola pa arma uma pindureta.  Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis.</p>
+    <p id="paragrafis6">Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Pra lá , depois divoltis porris, paradis. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Delegadis gente finis, bibendum egestas augue arcu ut est.</p>
+  </div>
+  <script>
+    // dando cor ao plano de fundo:
+    document.getElementById("fundis1").addEventListener("click", function () {
+      document.querySelector("div.paragrafis").style.backgroundColor = "black";
+      localStorage.setItem("backgroundColor", "black");
+    });
+    document.getElementById("fundis2").addEventListener("click", function () {
+      document.querySelector("div.paragrafis").style.backgroundColor = "white";
+      localStorage.setItem("backgroundColor", "white");
+    });
+    document.getElementById("fundis3").addEventListener("click", function () {
+      document.querySelector("div.paragrafis").style.backgroundColor = "yellow";
+      localStorage.setItem("backgroundColor", "yellow");
+    });
+    document.getElementById("fundis4").addEventListener("click", function () {
+      document.querySelector("div.paragrafis").style.backgroundColor = "pink";
+      localStorage.setItem("backgroundColor", "pink");
+    });
+    document.getElementById("fundis5").addEventListener("click", function () {
+      document.querySelector("div.paragrafis").style.backgroundColor = "blue";
+      localStorage.setItem("backgroundColor", "blue");
+    });
+    if (localStorage.backgroundColor) {
+      document.querySelector("div.paragrafis").style.backgroundColor = localStorage.backgroundColor;
+    };
+    // dando cor aos parágrafos:
+    document.getElementById("coris1").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.color = "black";
+      document.getElementById("paragrafis2").style.color = "black";
+      document.getElementById("paragrafis3").style.color = "black";
+      document.getElementById("paragrafis4").style.color = "black";
+      document.getElementById("paragrafis5").style.color = "black";
+      document.getElementById("paragrafis6").style.color = "black";
+      localStorage.setItem("fontColor", "black");
+    });
+    document.getElementById("coris2").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.color = "white";
+      document.getElementById("paragrafis2").style.color = "white";
+      document.getElementById("paragrafis3").style.color = "white";
+      document.getElementById("paragrafis4").style.color = "white";
+      document.getElementById("paragrafis5").style.color = "white";
+      document.getElementById("paragrafis6").style.color = "white";
+      localStorage.setItem("fontColor", "white");
+    });
+    document.getElementById("coris3").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.color = "yellow";
+      document.getElementById("paragrafis2").style.color = "yellow";
+      document.getElementById("paragrafis3").style.color = "yellow";
+      document.getElementById("paragrafis4").style.color = "yellow";
+      document.getElementById("paragrafis5").style.color = "yellow";
+      document.getElementById("paragrafis6").style.color = "yellow";
+      localStorage.setItem("fontColor", "yellow");
+    });
+    document.getElementById("coris4").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.color = "pink";
+      document.getElementById("paragrafis2").style.color = "pink";
+      document.getElementById("paragrafis3").style.color = "pink";
+      document.getElementById("paragrafis4").style.color = "pink";
+      document.getElementById("paragrafis5").style.color = "pink";
+      document.getElementById("paragrafis6").style.color = "pink";
+      localStorage.setItem("fontColor", "pink");
+    });
+    document.getElementById("coris5").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.color = "lightblue";
+      document.getElementById("paragrafis2").style.color = "lightblue";
+      document.getElementById("paragrafis3").style.color = "lightblue";
+      document.getElementById("paragrafis4").style.color = "lightblue";
+      document.getElementById("paragrafis5").style.color = "lightblue";
+      document.getElementById("paragrafis6").style.color = "lightblue";
+      localStorage.setItem("fontColor", "lightblue");
+    });
+    if (localStorage.fontColor) {
+      document.getElementById("paragrafis1").style.color = localStorage.fontColor;
+      document.getElementById("paragrafis2").style.color = localStorage.fontColor;
+      document.getElementById("paragrafis3").style.color = localStorage.fontColor;
+      document.getElementById("paragrafis4").style.color = localStorage.fontColor;
+      document.getElementById("paragrafis5").style.color = localStorage.fontColor;
+      document.getElementById("paragrafis6").style.color = localStorage.fontColor;
+    };
+    // determinando o tamanho
+    document.getElementById("tamanhis1").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.fontSize = "10px";
+      document.getElementById("paragrafis2").style.fontSize = "10px";
+      document.getElementById("paragrafis3").style.fontSize = "10px";
+      document.getElementById("paragrafis4").style.fontSize = "10px";
+      document.getElementById("paragrafis5").style.fontSize = "10px";
+      document.getElementById("paragrafis6").style.fontSize = "10px";
+      localStorage.setItem("fontSize", "10px");
+    });
+    document.getElementById("tamanhis2").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.fontSize = "11px";
+      document.getElementById("paragrafis2").style.fontSize = "11px";
+      document.getElementById("paragrafis3").style.fontSize = "11px";
+      document.getElementById("paragrafis4").style.fontSize = "11px";
+      document.getElementById("paragrafis5").style.fontSize = "11px";
+      document.getElementById("paragrafis6").style.fontSize = "11px";
+      localStorage.setItem("fontSize", "11px");
+    });
+    document.getElementById("tamanhis3").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.fontSize = "12px";
+      document.getElementById("paragrafis2").style.fontSize = "12px";
+      document.getElementById("paragrafis3").style.fontSize = "12px";
+      document.getElementById("paragrafis4").style.fontSize = "12px";
+      document.getElementById("paragrafis5").style.fontSize = "12px";
+      document.getElementById("paragrafis6").style.fontSize = "12px";
+      localStorage.setItem("fontSize", "12px");
+    });
+    document.getElementById("tamanhis4").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.fontSize = "14px";
+      document.getElementById("paragrafis2").style.fontSize = "14px";
+      document.getElementById("paragrafis3").style.fontSize = "14px";
+      document.getElementById("paragrafis4").style.fontSize = "14px";
+      document.getElementById("paragrafis5").style.fontSize = "14px";
+      document.getElementById("paragrafis6").style.fontSize = "14px";
+      localStorage.setItem("fontSize", "14px");
+    });
+    document.getElementById("tamanhis5").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.fontSize = "16px";
+      document.getElementById("paragrafis2").style.fontSize = "16px";
+      document.getElementById("paragrafis3").style.fontSize = "16px";
+      document.getElementById("paragrafis4").style.fontSize = "16px";
+      document.getElementById("paragrafis5").style.fontSize = "16px";
+      document.getElementById("paragrafis6").style.fontSize = "16px";
+      localStorage.setItem("fontSize", "16px");
+    });
+    if (localStorage.fontSize) {
+      document.getElementById("paragrafis1").style.fontSize = localStorage.fontSize;
+      document.getElementById("paragrafis2").style.fontSize = localStorage.fontSize;
+      document.getElementById("paragrafis3").style.fontSize = localStorage.fontSize;
+      document.getElementById("paragrafis4").style.fontSize = localStorage.fontSize;
+      document.getElementById("paragrafis5").style.fontSize = localStorage.fontSize;
+      document.getElementById("paragrafis6").style.fontSize = localStorage.fontSize;
+    };
+    //definindo espaçamento:
+    document.getElementById("espacamentis1").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.lineHeight = "1.0";
+      document.getElementById("paragrafis2").style.lineHeight = "1.0";
+      document.getElementById("paragrafis3").style.lineHeight = "1.0";
+      document.getElementById("paragrafis4").style.lineHeight = "1.0";
+      document.getElementById("paragrafis5").style.lineHeight = "1.0";
+      document.getElementById("paragrafis6").style.lineHeight = "1.0";
+      localStorage.setItem("lineHeight", "1.0");
+    });
+    document.getElementById("espacamentis2").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.lineHeight = "1.5";
+      document.getElementById("paragrafis2").style.lineHeight = "1.5";
+      document.getElementById("paragrafis3").style.lineHeight = "1.5";
+      document.getElementById("paragrafis4").style.lineHeight = "1.5";
+      document.getElementById("paragrafis5").style.lineHeight = "1.5";
+      document.getElementById("paragrafis6").style.lineHeight = "1.5";
+      localStorage.setItem("lineHeight", "1.5");
+    });
+    document.getElementById("espacamentis3").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.lineHeight = "2.0";
+      document.getElementById("paragrafis2").style.lineHeight = "2.0";
+      document.getElementById("paragrafis3").style.lineHeight = "2.0";
+      document.getElementById("paragrafis4").style.lineHeight = "2.0";
+      document.getElementById("paragrafis5").style.lineHeight = "2.0";
+      document.getElementById("paragrafis6").style.lineHeight = "2.0";
+      localStorage.setItem("lineHeight", "2.0");
+    });
+    if (localStorage.lineHeight) {
+      document.getElementById("paragrafis1").style.lineHeight = localStorage.lineHeight;
+      document.getElementById("paragrafis2").style.lineHeight = localStorage.lineHeight;
+      document.getElementById("paragrafis3").style.lineHeight = localStorage.lineHeight;
+      document.getElementById("paragrafis4").style.lineHeight = localStorage.lineHeight;
+      document.getElementById("paragrafis5").style.lineHeight = localStorage.lineHeight;
+      document.getElementById("paragrafis6").style.lineHeight = localStorage.lineHeight;
+    };
+    //definindo a fonte:
+    document.getElementById("fontis1").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.fontFamily = "Arial";
+      document.getElementById("paragrafis2").style.fontFamily = "Arial";
+      document.getElementById("paragrafis3").style.fontFamily = "Arial";
+      document.getElementById("paragrafis4").style.fontFamily = "Arial";
+      document.getElementById("paragrafis5").style.fontFamily = "Arial";
+      document.getElementById("paragrafis6").style.fontFamily = "Arial";
+      localStorage.setItem("fontFamily", "Arial");
+    });
+    document.getElementById("fontis2").addEventListener("click", function () {
+      document.getElementById("paragrafis1").style.fontFamily = "Monospace";
+      document.getElementById("paragrafis2").style.fontFamily = "Monospace";
+      document.getElementById("paragrafis3").style.fontFamily = "Monospace";
+      document.getElementById("paragrafis4").style.fontFamily = "Monospace";
+      document.getElementById("paragrafis5").style.fontFamily = "Monospace";
+      document.getElementById("paragrafis6").style.fontFamily = "Monospace";
+      localStorage.setItem("fontFamily", "Monospace");
+    });
+    if (localStorage.fontFamily) {
+      document.getElementById("paragrafis1").style.fontFamily = localStorage.fontFamily;
+      document.getElementById("paragrafis2").style.fontFamily = localStorage.fontFamily;
+      document.getElementById("paragrafis3").style.fontFamily = localStorage.fontFamily;
+      document.getElementById("paragrafis4").style.fontFamily = localStorage.fontFamily;
+      document.getElementById("paragrafis5").style.fontFamily = localStorage.fontFamily;
+      document.getElementById("paragrafis6").style.fontFamily = localStorage.fontFamily;
+    };
+  </script>
+</body>
+</html>
