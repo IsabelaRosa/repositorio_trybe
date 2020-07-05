@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício pré-aula dia 4.6</title>
+</head>
+<body>
+  <div id="paiDoPai">
+    <div id="pai">
+      <div id="primeiroFilho">1f</div>
+      <div id="elementoOndeVoceEsta">
+        <div id="primeiroFilhoDoFilho">1ff</div>
+        <div id="segundoEUltimoFilhoDoFilho">2ff</div>
+      </div>
+      Atenção!
+      <div id="terceiroFilho">3f</div>
+      <div id="quartoEUltimoFilho">4f</div>
+    </div>
+  </div>
+  <script>
+    //acessar o elementoOndeVoceEsta:
+    console.log(document.getElementById("elementoOndeVoceEsta"));
+    //acessar o pai do elementoOndeVoceEsta e adicionar uma cor pra ele:
+    console.log(document.getElementById("elementoOndeVoceEsta").parentNode.style.color = "red");
+    //acessar o primeiroFilhoDoFilho e adicionar um texto:
+    console.log(document.querySelector("#elementoOndeVoceEsta").firstChild.innerHTML = "primeiro filho do filho");
+    //acessar o primeiroFilho a partir de pai:
+    console.log(document.getElementById("pai").firstChild);
+    //acessar o primeiroFilho a partir de elementoOndeVoceEsta:
+    console.log(document.getElementById("elementoOndeVoceEsta").previousElementSibling);
+    //acessar o texto Atenção a partir de elementoOndeVoceEsta:
+    console.log(document.getElementById("elementoOndeVoceEsta").nextSibling);
+    //acessar o terceiroFilho a partir de pai:
+    console.log(document.querySelector("#pai").childNodes[5]);
+    //criar um irmão para elementoOndeVoceEsta:
+    let criaDiv = document.createElement("div");
+    criaDiv.innerHTML = "div irmã do elementoOndeVoceEsta";
+    document.getElementById("pai").appendChild(criaDiv);
+    //criar um filho para o elementoOndeVoceEsta:
+    let criaFilho = document.createElement("p");
+    criaFilho.innerHTML = "texto do parágrafo filho";
+    document.getElementById("elementoOndeVoceEsta").appendChild(criaFilho);
+    //criar um filho para primeiroFilhoDoFilho:
+    let filhoDoFilho = document.createElement("p");
+    filhoDoFilho.innerHTML = "parágrafo do filho do filho";
+    document.getElementById("primeiroFilhoDoFilho").appendChild(filhoDoFilho);
+    //acessar a partir deste filho criado o terceiroFilho:
+    console.log(document.getElementsByTagName("p")[0].parentNode.parentNode.nextElementSibling);
+    //removendo a div irma do elementoOndeVoceEsta:
+    document.getElementById("pai").removeChild(criaDiv);
+    //removendo demais elementos, deixando apenas o pai, elementoOndeVoceEsta e o primeiroFilhoDoFilho
+    document.getElementById("elementoOndeVoceEsta").removeChild(segundoEUltimoFilhoDoFilho);
+    document.getElementById("pai").removeChild(primeiroFilho);
+    document.getElementById("pai").removeChild(terceiroFilho);
+    document.getElementById("pai").removeChild(quartoEUltimoFilho);
+    /* optei por manter as tags p que acrescentei dentro das tags remanescentes
+    para facilitar a identificação de cada uma delas. e não consegui remover o
+    texto incluido previamente no exercício "Atenção!" */
+  </script>
+</body>
+</html>

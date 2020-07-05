@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício dia 4.6</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //adicionando a tag h1:
+      let tituloH1 = document.createElement("h1");
+      tituloH1.innerHTML = "Exercício 4.6";
+      document.querySelector("body").appendChild(tituloH1);
+      //adicionando a div main-content:
+      let divMainContent = document.createElement("div");
+      divMainContent.classList.add("main-content");
+      document.querySelector("body").appendChild(divMainContent);
+      //adicionando a div center-content:
+      let divCenterContent = document.createElement("div");
+      divCenterContent.classList.add("center-content");
+      document.querySelector("div.main-content").appendChild(divCenterContent);
+      //adicionando a tag p filha de center-content:
+      let parag4 = document.createElement("p");
+      parag4.classList.add("left-content");
+      parag4.innerHTML = "Este parágrafo é filho da div center-content";
+      document.querySelector("div.center-content").appendChild(parag4);
+      //adicionando a div left-content: 
+      let divLeftContent = document.createElement("div");
+      divLeftContent.classList.add("left-content");
+      document.querySelector("div.main-content").appendChild(divLeftContent);
+      //adicionando a div right-content:
+      let divRightContent = document.createElement("div");
+      divRightContent.className = "right-content";
+      document.querySelector("div.main-content").appendChild(divRightContent);
+      //adicionando a tag small image:
+      let imgSmall = document.createElement("img");
+      imgSmall.className = "small-image";
+      imgSmall.src = "https://picsum.photos/200";
+      document.querySelector("div.left-content").appendChild(imgSmall);
+      //adicionando uma lista não ordenada:
+      let listaUl = document.createElement("ul");
+      document.querySelector("div.right-content").appendChild(listaUl);
+      const arrayNumeros = ["um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez"];
+      for (let i in arrayNumeros) {
+        let itemLi = document.createElement("li");
+        itemLi.innerHTML = arrayNumeros[i];
+        listaUl.appendChild(itemLi);
+      }
+      //criando tags h3:
+      let primeiroH3 = document.createElement("h3");
+      primeiroH3.innerHTML = "primeiro h3";
+      divMainContent.appendChild(primeiroH3);
+      let segundoH3 = document.createElement("h3");
+      segundoH3.innerHTML = "segundo h3";
+      divMainContent.appendChild(segundoH3);
+      let terceiroH3 = document.createElement("h3");
+      terceiroH3.innerHTML = "terceiro h3";
+      divMainContent.appendChild(terceiroH3);
+      //PARTE II
+      //adicionando classe ao h1:
+      tituloH1.className = "title";
+      //adicionar classe aos h3:
+      primeiroH3.className = "description";
+      segundoH3.className = "description";
+      terceiroH3.className = "description";
+      //removendo a div left-content:
+      divMainContent.removeChild(divLeftContent);
+      //centralizar a div right-content:
+      //divRightContent.style = "margin-right: auto";
+      //ou:
+      divRightContent.style.marginRight = "auto";
+      //trocando a cor de fundo da div center-content:
+      divCenterContent.style.backgroundColor = "lightgreen";
+      //removendo os elementos nove e dez da lista:
+      listaUl.lastChild.remove();
+      listaUl.lastChild.remove();
+    </script>
+  </body>
+</html>
+
